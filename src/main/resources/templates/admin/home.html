@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org" th:replace="base::layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <section>
+      <h1>Hello admin</h1>
+      <a href="/logout">Logout</a><br>
+      <a href="list">List of users</a><br>
+      <a href="new">Create new user</a><br>
+
+      <form method="get" action="/admin/{id}">
+          <label for="userId">Enter user ID to change Status:</label>
+          <input type="text" id="userId" name="id" required>
+          <button type="submit">Submit</button>
+      </form>
+      <br>
+      <form method="get" action="/admin/{id}/edit">
+          <label for="editId">Enter user ID to edit:</label>
+          <input type="text" id="editId" name="id" required>
+          <button type="submit">Submit</button>
+      </form>
+      <br>
+  </section>
+</body>
+</html>

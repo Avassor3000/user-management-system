@@ -1,0 +1,37 @@
+table.user-list {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table.user-list th,
+table.user-list td {
+    text-align: left;
+    padding: 8px;
+}
+
+table.user-list th {
+    background-color: #333;
+    color: white;
+}
+
+table.user-list tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table.user-list a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+table.user-list a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+table.user-list tr.active {
+    background-color: #e6ffe6;
+}
+
+table.user-list tr.inactive {
+    background-color: #ffe6e6;
+}

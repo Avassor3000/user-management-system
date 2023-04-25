@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org" th:replace="base::layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <section>
+      <h1>Hello [[${user.firstName}]]</h1>
+      <a href="/logout">Logout</a><br>
+      <a href="list">List of users</a><br>
+
+      <form method="get" action="/user/{id}">
+          <label for="userId">Enter User ID:</label>
+          <input type="text" id="userId" name="id" required>
+          <button type="submit">Submit</button>
+      </form>
+      <br>
+  </section>
+</body>
+</html>

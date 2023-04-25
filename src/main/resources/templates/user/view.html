@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+<head>
+  <meta charset="UTF-8">
+  <title>User Details</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section>
+  <h1>Hello [[${user.firstName}]]</h1>
+  <a href="/logout">Logout</a>
+
+  <h2>User Details:</h2>
+
+  <div th:if="${userById}">
+    <p>ID: <span th:text="${userById.id}"></span></p>
+    <p>Email: <span th:text="${userById.email}"></span></p>
+    <p>First Name: <span th:text="${userById.firstName}"></span></p>
+    <p>Last Name: <span th:text="${userById.lastName}"></span></p>
+    <p>Role: <span th:text="${userById.role}"></span></p>
+    <p>Status: <span th:text="${userById.status} ? 'Active' : 'Inactive'"></span></p>
+    <p>Created At: <span th:text="${userById.createdAt}"></span></p>
+  </div>
+</section>
+</body>
+</html>
+

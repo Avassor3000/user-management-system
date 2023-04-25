@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit User</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section>
+  <h1>Hello Admin</h1>
+  <a href="/logout">Logout</a>
+  <h2>Edit User:</h2>
+  <div th:if="${userById}">
+    <form th:action="@{/admin/{id}/edit(id=${userById.id})}" method="post">
+      <p>ID: <span th:text="${userById.id}"></span></p>
+      <p>First Name: <input type="text" name="firstName" th:value="${userById.firstName}"></p>
+      <p>Last Name: <input type="text" name="lastName" th:value="${userById.lastName}"></p>
+      <p>Role: <input type="text" name="role" th:value="${userById.role}"></p>
+      <p>Status: <input type="checkbox" name="status" th:checked="${userById.status}"></p>
+      <button type="submit">Save</button>
+    </form>
+  </div>
+</section>
+</body>
+</html>
